@@ -7,8 +7,8 @@ import {
   UPDATE_USER_REQUEST, UPDATE_USER_SUCCESS, UPDATE_USER_FAILURE,
   CHANGE_PASSWORD_REQUEST, CHANGE_PASSWORD_SUCCESS, CHANGE_PASSWORD_FAILURE,
   REFRESH_TOKEN_REQUEST, REFRESH_TOKEN_SUCCESS, REFRESH_TOKEN_FAILURE,
-} from "./ActionTypes";
-import { api, API_URL } from "../../Config/api";
+} from "./ActionType";
+import { api, API_URL } from "../../config/api";
 
 
 export const registerUser = (reqData) => async (dispatch) => {

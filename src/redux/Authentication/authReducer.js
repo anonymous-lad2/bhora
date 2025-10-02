@@ -21,7 +21,7 @@ import {
   CHANGE_PASSWORD_REQUEST,
   CHANGE_PASSWORD_SUCCESS,
   CHANGE_PASSWORD_FAILURE,
-} from "./ActionTypes";
+} from "./ActionType";
 
 const initialState = {
   user: null,

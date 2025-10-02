@@ -1,4 +1,4 @@
-import { api } from "../../Config/api"; // Assuming your configured axios instance
+import { api } from "../../config/api"; // Assuming your configured axios instance
 import {
     CREATE_TASK_REQUEST, CREATE_TASK_SUCCESS, CREATE_TASK_FAILURE,
     UPDATE_TASK_REQUEST, UPDATE_TASK_SUCCESS, UPDATE_TASK_FAILURE,
@@ -6,7 +6,7 @@ import {
     GET_TASKS_BY_STATUS_REQUEST, GET_TASKS_BY_STATUS_SUCCESS, GET_TASKS_BY_STATUS_FAILURE,
     UPDATE_TASK_STATUS_REQUEST, UPDATE_TASK_STATUS_SUCCESS, UPDATE_TASK_STATUS_FAILURE,
     DELETE_TASK_REQUEST, DELETE_TASK_SUCCESS, DELETE_TASK_FAILURE,
-} from "./TaskActionTypes";
+} from "./ActionType";
 
 const getAuthHeaders = (jwt) => ({
     headers: {
@@ -70,7 +70,7 @@ export const getTasksByStatus = (status, jwt) => async (dispatch) => {
     dispatch({ type: GET_TASKS_BY_STATUS_REQUEST });
     try {
         const { data } = await api.get(
-            `${TASK_API_PATH}/status?status=${status}`, // Placeholder endpoint with query param
+            `/task/status?status=${status}`, // Placeholder endpoint with query param
             getAuthHeaders(jwt)
         );
         dispatch({ type: GET_TASKS_BY_STATUS_SUCCESS, payload: data.data }); // Assuming array of tasks is in data.data
